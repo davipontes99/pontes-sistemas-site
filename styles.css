@@ -136,6 +136,22 @@ section#planos, section#servicos, section#projetos { background: var(--bg2); }
   transition: height 0.35s cubic-bezier(.22,1,.36,1);
 }
 
+.nav-logo-text {
+  font-family: 'Cinzel', 'Sora', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  margin-left: 10px;
+  background: linear-gradient(135deg, #f5d78a, var(--gold) 55%, #cf9a3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 640px) {
+  .nav-logo-text { display: none; }
+}
+
 .nav-links { list-style: none; display: flex; gap: 28px; flex: 1; justify-content: center; }
 .nav-links a {
   font-size: 0.88rem; color: var(--muted);
