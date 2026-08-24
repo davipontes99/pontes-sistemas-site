@@ -148,10 +148,6 @@ section#planos, section#servicos, section#projetos { background: var(--bg2); }
   background-clip: text;
 }
 
-@media (max-width: 640px) {
-  .nav-logo-text { display: none; }
-}
-
 .nav-links { list-style: none; display: flex; gap: 28px; flex: 1; justify-content: center; }
 .nav-links a {
   font-size: 0.88rem; color: var(--muted);
