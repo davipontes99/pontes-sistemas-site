@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dp-software.vercel.app/sitemap.xml
+Sitemap: https://pontes-softwares.vercel.app/sitemap.xml

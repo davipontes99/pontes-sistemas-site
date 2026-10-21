@@ -117,7 +117,7 @@ window.addEventListener('keydown', (e) => {
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(108,99,255,0.8)';
+      ctx.fillStyle = 'rgba(26,125,255,0.8)';
       ctx.fill();
 
       for (let j = i + 1; j < particles.length; j++) {
@@ -129,7 +129,7 @@ window.addEventListener('keydown', (e) => {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `rgba(108,99,255,${alpha * 0.4})`;
+          ctx.strokeStyle = `rgba(26,125,255,${alpha * 0.4})`;
           ctx.lineWidth = 0.8;
           ctx.stroke();
         }
@@ -140,7 +140,7 @@ window.addEventListener('keydown', (e) => {
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(mouse.x, mouse.y);
-        ctx.strokeStyle = `rgba(167,139,250,${alpha * 0.6})`;
+        ctx.strokeStyle = `rgba(56,200,255,${alpha * 0.6})`;
         ctx.lineWidth = 0.8;
         ctx.stroke();
       }
