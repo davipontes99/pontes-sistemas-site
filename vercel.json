@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path((?!google34b3240693699221\\.html).*)",
+      "has": [{ "type": "host", "value": "dp-software.vercel.app" }],
+      "destination": "https://pontes-softwares.vercel.app/:path",
+      "permanent": true
+    },
+    {
+      "source": "/:path((?!google34b3240693699221\\.html).*)",
+      "has": [{ "type": "host", "value": "pontes-sistemas-site.vercel.app" }],
+      "destination": "https://pontes-softwares.vercel.app/:path",
+      "permanent": true
+    }
+  ]
+}
