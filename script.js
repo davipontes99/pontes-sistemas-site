@@ -59,6 +59,39 @@ const observaNumero = new IntersectionObserver(entradas => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-alvo]').forEach(el => observaNumero.observe(el));
 
+// ── Título do topo digitando ────────────────────
+(function () {
+  const h1 = document.querySelector('.hero h1');
+  if (!h1) return;
+  const partes = [...h1.childNodes].map(n => ({ texto: n.textContent, destaque: n.nodeName === 'EM' }));
+  h1.setAttribute('aria-label', h1.textContent);
+  const cursor = document.createElement('span');
+  cursor.className = 'cursor';
+  cursor.setAttribute('aria-hidden', 'true');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { h1.append(cursor); return; }
+
+  // segura a altura do título pra página não pular enquanto as letras aparecem
+  h1.style.minHeight = h1.offsetHeight + 'px';
+  h1.textContent = '';
+  const alvos = partes.map(p => {
+    const el = document.createElement(p.destaque ? 'em' : 'span');
+    el.setAttribute('aria-hidden', 'true');
+    h1.append(el);
+    return { el, texto: p.texto };
+  });
+  h1.append(cursor);
+
+  let i = 0, j = 0;
+  function digita() {
+    if (i >= alvos.length) { h1.style.minHeight = ''; return; }
+    const alvo = alvos[i];
+    alvo.el.textContent += alvo.texto[j++];
+    if (j >= alvo.texto.length) { i++; j = 0; }
+    setTimeout(digita, 40 + Math.random() * 50);
+  }
+  setTimeout(digita, 350);
+})();
+
 // ── Ano no rodapé ───────────────────────────────
 document.getElementById('ano').textContent = new Date().getFullYear();
 
