@@ -15,23 +15,6 @@ menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => 
   botaoMenu.innerHTML = '<i class="fa-solid fa-bars"></i>';
 }));
 
-// ── Abas de produto no topo ─────────────────────
-const telaHero = document.getElementById('tela-hero');
-const abas = document.querySelectorAll('.abas button');
-abas.forEach(aba => aba.addEventListener('click', () => {
-  abas.forEach(a => a.setAttribute('aria-selected', String(a === aba)));
-  const img = telaHero.querySelector('img');
-  img.style.opacity = '0';
-  setTimeout(() => {
-    img.onload = () => { img.style.opacity = '1'; };
-    img.src = aba.dataset.tela;
-    img.alt = 'Tela do ' + aba.textContent.trim();
-    telaHero.querySelector('.tela-barra b').textContent = aba.dataset.nome;
-  }, 150);
-}));
-// já baixa as outras telas pra troca ser instantânea
-abas.forEach(a => { const i = new Image(); i.src = a.dataset.tela; });
-
 // ── Ampliar tela ao clicar ──────────────────────
 const amplia = document.querySelector('.amplia');
 document.querySelectorAll('.tela').forEach(tela => tela.addEventListener('click', () => {
