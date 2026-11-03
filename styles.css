@@ -750,3 +750,27 @@ footer:not(.rodape) { background: var(--noite); color: rgb(255 255 255 / .68); f
   right: 0;
   width: 31%;
 }
+
+/* Ao passar o mouse, o aparelho vem um pouco à frente (só com mouse e sem "reduzir movimento") */
+.s-ap-monitor,
+.s-ap-notebook,
+.s-ap-tablet,
+.s-ap-iphone {
+  transform-origin: 50% 100%;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .s-ap-monitor,
+  .s-ap-notebook,
+  .s-ap-tablet,
+  .s-ap-iphone {
+    transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.45s ease;
+  }
+  .s-ap-monitor:hover,
+  .s-ap-notebook:hover,
+  .s-ap-tablet:hover,
+  .s-ap-iphone:hover {
+    z-index: 2;
+    transform: translateY(-0.8cqw) scale(1.04);
+    filter: drop-shadow(0 2.4cqw 2.6cqw rgb(8 20 44 / 0.38));
+  }
+}
