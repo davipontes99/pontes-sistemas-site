@@ -100,7 +100,7 @@ h1, h2, h3 {
   color: #fff;
 }
 .topo-linha { display: flex; align-items: center; gap: 24px; height: 64px; }
-.topo-logo img { display: block; height: 28px; width: auto; }
+.topo-logo img { display: block; height: 32px; width: auto; }
 .topo-nav { display: none; gap: 22px; font-size: .92rem; color: rgb(255 255 255 / .76); }
 .topo-nav a:hover { color: #fff; }
 .topo-cta { display: none; margin-left: auto; min-height: 40px; padding: 6px 14px; font-size: .92rem; }
@@ -119,8 +119,9 @@ h1, h2, h3 {
 .menu-aberto[hidden] { display: none; }
 .menu-aberto a { padding: 12px 0; color: rgb(255 255 255 / .85); }
 @media (min-width: 960px) {
-  .topo-nav { display: inline-flex; margin-left: auto; }
-  .topo-cta { display: inline-flex; margin-left: 0; }
+  /* como nos sites dos produtos: menu logo depois da logo, botão encostado à direita */
+  .topo-nav { display: inline-flex; }
+  .topo-cta { display: inline-flex; margin-left: auto; }
   .topo-menu, .menu-aberto { display: none !important; }
 }
 
