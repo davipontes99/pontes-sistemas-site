@@ -101,7 +101,7 @@ h1, h2, h3 {
 }
 .topo-linha { display: flex; align-items: center; gap: 24px; height: 64px; }
 .topo-logo img { display: block; height: 28px; width: auto; }
-.topo-nav { display: none; gap: 24px; font-size: .92rem; color: rgb(255 255 255 / .76); }
+.topo-nav { display: none; gap: 22px; font-size: .92rem; color: rgb(255 255 255 / .76); }
 .topo-nav a:hover { color: #fff; }
 .topo-cta { display: none; margin-left: auto; min-height: 40px; padding: 6px 14px; font-size: .92rem; }
 .topo-menu {
@@ -144,7 +144,7 @@ h1, h2, h3 {
   position: relative;
   max-width: 900px;
   margin-inline: auto;
-  padding-block: 64px 40px;
+  padding-block: 72px 44px;
   text-align: center;
 }
 .hero-selo {
@@ -160,13 +160,13 @@ h1, h2, h3 {
   font-size: .85rem;
   font-weight: 600;
 }
-.hero h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); letter-spacing: -.035em; line-height: 1.02; }
+.hero h1 { font-size: clamp(2.5rem, 7.4vw, 5rem); letter-spacing: -.035em; line-height: 1.02; }
 .hero h1 em { color: var(--ciano); font-style: normal; }
 .hero-texto > p:not(.hero-selo) {
-  max-width: 660px;
+  max-width: 640px;
   margin: 22px auto 0;
   color: rgb(255 255 255 / .74);
-  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  font-size: clamp(1.05rem, 2.2vw, 1.22rem);
 }
 .hero-acoes { display: flex; flex-direction: column; gap: 10px; margin-top: 30px; }
 @media (min-width: 560px) { .hero-acoes { flex-direction: row; justify-content: center; } }
