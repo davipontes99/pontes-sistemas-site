@@ -77,22 +77,33 @@
       </div>
     </div>
 
-    <div class="palco sobe">
-      <div class="abas" role="tablist" aria-label="Produtos">
-        <button type="button" role="tab" aria-selected="true" data-tela="assets/produtos/orcafacil-inicio.webp" data-nome="OrçaFácil · Início">
-          <img src="assets/produtos/orcafacil-icone.png" alt="" width="24" height="24"> OrçaFácil
-        </button>
-        <button type="button" role="tab" aria-selected="false" data-tela="assets/produtos/cmv-dashboard.webp" data-nome="CMV Dashboard · Painel do CMV">
-          <img src="assets/produtos/cmv-icone.jpg" alt="" width="24" height="24"> CMV Dashboard
-        </button>
-        <button type="button" role="tab" aria-selected="false" data-tela="assets/produtos/postaai-inicio.webp" data-nome="PostaAí · Início">
-          <img src="assets/produtos/postaai-icone.png" alt="" width="24" height="24"> PostaAí
-        </button>
-      </div>
-      <figure class="tela" id="tela-hero">
-        <figcaption class="tela-barra"><span class="pontos"><i></i><i></i><i></i></span><b>OrçaFácil · Início</b><span>Dados de demonstração</span></figcaption>
-        <img src="assets/produtos/orcafacil-inicio.webp" alt="Tela inicial do OrçaFácil" width="1440" height="900" fetchpriority="high">
-      </figure>
+    <div class="vitrine sobe" aria-label="Nossos produtos">
+      <a class="vitrine-item" href="#orcafacil">
+        <span class="vitrine-tela"><img src="assets/produtos/orcafacil-inicio.webp" alt="Tela do OrçaFácil" width="1440" height="900"></span>
+        <span class="vitrine-info">
+          <img src="assets/produtos/orcafacil-icone.png" alt="" width="40" height="40">
+          <span><b>OrçaFácil</b><small>Orçamentos aprovados pelo WhatsApp</small></span>
+        </span>
+      </a>
+      <a class="vitrine-item" href="#cmv-dashboard">
+        <span class="vitrine-tela"><img src="assets/produtos/cmv-dashboard.webp" alt="Tela do CMV Dashboard" width="1440" height="900"></span>
+        <span class="vitrine-info">
+          <img src="assets/produtos/cmv-icone.jpg" alt="" width="40" height="40">
+          <span><b>CMV Dashboard</b><small>Custo e estoque de redes de lojas</small></span>
+        </span>
+      </a>
+      <a class="vitrine-item" href="#postaai">
+        <span class="vitrine-tela"><img src="assets/produtos/postaai-inicio.webp" alt="Tela do PostaAí" width="1440" height="900"></span>
+        <span class="vitrine-info">
+          <img src="assets/produtos/postaai-icone.png" alt="" width="40" height="40">
+          <span><b>PostaAí</b><small>Instagram no piloto automático</small></span>
+        </span>
+      </a>
+      <a class="vitrine-item vitrine-medida" href="#sob-medida">
+        <span class="vitrine-medida-icone"><i class="fa-solid fa-code"></i></span>
+        <span><b>Sistema sob medida</b><small>Para o processo que nenhum sistema pronto atende</small></span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
     </div>
   </div>
 </section>
@@ -114,7 +125,7 @@
     <h2 class="titulo">Três sistemas prontos, cada um resolvendo um problema de verdade.</h2>
     <p class="sub">Todos funcionam no navegador, no computador e no celular, sem instalar nada.</p>
 
-    <article class="produto revela">
+    <article class="produto revela" id="orcafacil">
       <div class="produto-texto">
         <div class="produto-marca">
           <img src="assets/produtos/orcafacil-icone.png" alt="" width="48" height="48">
@@ -136,7 +147,7 @@
       </figure>
     </article>
 
-    <article class="produto inverte revela">
+    <article class="produto inverte revela" id="cmv-dashboard">
       <div class="produto-texto">
         <div class="produto-marca">
           <img src="assets/produtos/cmv-icone.jpg" alt="" width="48" height="48">
@@ -159,7 +170,7 @@
       </figure>
     </article>
 
-    <article class="produto revela">
+    <article class="produto revela" id="postaai">
       <div class="produto-texto">
         <div class="produto-marca">
           <img src="assets/produtos/postaai-icone.png" alt="" width="48" height="48">
