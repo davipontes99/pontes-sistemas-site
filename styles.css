@@ -9,6 +9,8 @@
   --suave: #4d5a70;
   --linha: #e1e6ee;
   --papel: #f5f7fb;
+  --fundo: #eef2f8;
+  --fundo-2: #e3eaf5;
   --azul: #035afe;
   --azul-escuro: #0049d6;
   --ceu: #1a8cff;
@@ -32,7 +34,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body {
   min-height: 100vh;
   overflow-x: clip;
-  background: #fff;
+  background: var(--fundo);
   color: var(--tinta);
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 1rem;
@@ -126,7 +128,7 @@ h1, h2, h3 {
 .hero {
   --invade: 56px;
   position: relative;
-  background: linear-gradient(var(--noite) calc(100% - var(--invade) - 260px), #0a2a6e calc(100% - var(--invade) - 90px), var(--azul) calc(100% - var(--invade) + 10px), #cfe2ff calc(100% - var(--invade) + 90px), #fff 100%);
+  background: linear-gradient(var(--noite) calc(100% - var(--invade) - 260px), #0a2a6e calc(100% - var(--invade) - 90px), var(--azul) calc(100% - var(--invade) + 10px), #cfe2ff calc(100% - var(--invade) + 90px), var(--fundo) 100%);
   color: #fff;
 }
 @media (min-width: 768px) { .hero { --invade: 200px; } }
@@ -261,7 +263,22 @@ h1, h2, h3 {
 /* ─── Seções ─── */
 .secao { padding-block: 56px; }
 @media (min-width: 768px) { .secao { padding-block: 76px; } }
-.papel { background: var(--papel); }
+.papel { background: var(--fundo-2); }
+/* linhas verticais discretas, como as do topo */
+.colunas {
+  background-image: linear-gradient(to right, rgb(3 90 254 / .07) 1px, transparent 1px);
+  background-size: calc(100% / 6) 100%;
+  background-position: calc(100% / 12) 0;
+}
+.escura {
+  background: radial-gradient(800px 360px at 85% 0%, rgb(26 140 255 / .22), transparent 70%), var(--noite-2);
+  color: #fff;
+}
+.escura .rotulo { color: var(--ciano); }
+.escura .passos li { border-left-color: rgb(255 255 255 / .14); }
+.escura .passos li:hover { border-left-color: var(--ciano); }
+.escura .passos span { color: var(--ciano); }
+.escura .passos p { color: rgb(255 255 255 / .7); }
 .rotulo {
   margin-bottom: 12px;
   color: var(--azul);
