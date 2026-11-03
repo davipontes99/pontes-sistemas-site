@@ -150,6 +150,19 @@ h1, h2, h3 {
 }
 .hero h1 { font-size: clamp(2.5rem, 7.4vw, 5rem); letter-spacing: -.035em; line-height: 1.02; }
 .hero h1 em { color: var(--ciano); font-style: normal; }
+.hero h1 .cursor {
+  display: inline-block;
+  width: .07em;
+  height: .88em;
+  margin-left: .05em;
+  vertical-align: -.06em;
+  border-radius: 2px;
+  background: var(--ciano);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1 .cursor { animation: pisca 1s steps(1) infinite; }
+  @keyframes pisca { 50% { opacity: 0; } }
+}
 .hero-texto > p {
   max-width: 640px;
   margin: 22px auto 0;
