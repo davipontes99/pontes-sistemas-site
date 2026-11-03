@@ -495,6 +495,10 @@ footer:not(.rodape) { background: var(--noite); color: rgb(255 255 255 / .68); f
   transition: transform .2s;
 }
 .whats-flutua:hover { transform: scale(1.07); }
+@media (prefers-reduced-motion: no-preference) {
+  .whats-flutua { animation: whats-pulsa 2.4s ease-in-out infinite; }
+  @keyframes whats-pulsa { 50% { transform: scale(1.06); } }
+}
 
 /* ─── Ampliar tela ─── */
 .amplia {
