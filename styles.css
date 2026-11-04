@@ -791,3 +791,25 @@ footer:not(.rodape) { background: var(--noite); color: rgb(255 255 255 / .68); f
     filter: drop-shadow(0 2.4cqw 2.6cqw rgb(8 20 44 / 0.38));
   }
 }
+
+/* ─── Barra de rolagem (mesma nos sites da Pontes e dos produtos) ───
+   No body também: se ele tem estilo de barra, o Chrome usa o dele para a barra da página. */
+:is(html, body)::-webkit-scrollbar {
+  width: 12px;
+}
+:is(html, body)::-webkit-scrollbar-track {
+  background: var(--noite);
+}
+:is(html, body)::-webkit-scrollbar-thumb {
+  border: 3px solid var(--noite);
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--ciano), var(--azul));
+}
+:is(html, body)::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a5ecff, var(--ceu));
+}
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: var(--ceu) var(--noite);
+  }
+}
