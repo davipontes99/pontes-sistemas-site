@@ -95,10 +95,61 @@ document.querySelectorAll('[data-alvo]').forEach(el => observaNumero.observe(el)
 // ── Ano no rodapé ───────────────────────────────
 document.getElementById('ano').textContent = new Date().getFullYear();
 
-// ── Atalho pro painel interno (Ctrl+Alt+P) ─────
-const PAINEL_URL = 'https://painel-dev-ten.vercel.app';
+// ── Atalho pro Painel de Sistemas (Ctrl+Alt+P) ─
+const PAINEL_URL = 'https://cmv-saas.vercel.app/pontes';
 window.addEventListener('keydown', (e) => {
   if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 'p') {
     window.location.href = PAINEL_URL;
   }
 });
+
+// ── "Nós ligamos pra você": o pedido cai na aba Leads do Painel de Sistemas ──
+(function () {
+  const LEADS_URL = 'https://backend-production-d998.up.railway.app/api/leads';
+  const dialogo = document.querySelector('.ligamos');
+  if (!dialogo) return;
+  const form = dialogo.querySelector('.ligamos-form');
+  const ok = dialogo.querySelector('.ligamos-ok');
+  const erro = dialogo.querySelector('.ligamos-erro');
+  const enviar = dialogo.querySelector('.ligamos-enviar');
+
+  function abrir() {
+    form.hidden = false; ok.hidden = true; erro.hidden = true;
+    menu.hidden = true;
+    dialogo.showModal();
+    form.querySelector('[name=nome]').focus();
+  }
+  document.querySelectorAll('[data-abre-ligamos]').forEach(b => b.addEventListener('click', abrir));
+  dialogo.querySelector('.ligamos-fechar').addEventListener('click', () => dialogo.close());
+  dialogo.querySelector('.ligamos-fechar-ok').addEventListener('click', () => dialogo.close());
+  dialogo.addEventListener('click', e => { if (e.target === dialogo) dialogo.close(); });
+
+  function mostrarErro(texto) { erro.textContent = texto; erro.hidden = false; }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    erro.hidden = true;
+    const dados = Object.fromEntries(new FormData(form));
+    if (!dados.nome.trim()) return mostrarErro('Informe seu nome.');
+    if (dados.telefone.replace(/\D/g, '').length < 10) return mostrarErro('Informe o telefone com DDD.');
+    enviar.disabled = true;
+    enviar.textContent = 'Enviando...';
+    try {
+      const r = await fetch(LEADS_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...dados, origem: 'site-pontes' }),
+      });
+      const resposta = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(resposta.erro || 'Não foi possível enviar agora.');
+      form.reset();
+      form.hidden = true;
+      ok.hidden = false;
+    } catch (falha) {
+      mostrarErro((falha && falha.message) || 'Não foi possível enviar agora. Chame no WhatsApp: (14) 99726-7008.');
+    } finally {
+      enviar.disabled = false;
+      enviar.innerHTML = '<i class="fa-solid fa-phone"></i> Quero que me liguem';
+    }
+  });
+})();

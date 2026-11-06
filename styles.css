@@ -813,3 +813,41 @@ footer:not(.rodape) { background: var(--noite); color: rgb(255 255 255 / .68); f
     scrollbar-color: var(--ceu) var(--noite);
   }
 }
+
+/* ── Nós ligamos pra você ─────────────────────── */
+.topo-ligamos + .topo-cta { margin-left: 0 !important; }
+.topo-ligamos { cursor: pointer; font: inherit; font-size: .92rem; }
+.menu-ligamos { margin-top: 6px; padding: 10px 0; border: 0; background: none; color: #fff; font: inherit; font-weight: 600; text-align: left; cursor: pointer; }
+.final .btn-claro, .cta-final .btn-claro { cursor: pointer; font: inherit; }
+button.btn { font: inherit; cursor: pointer; }
+.ligamos { width: min(480px, calc(100% - 24px)); max-height: calc(100dvh - 24px); margin: auto; padding: 0; border: 0; border-radius: 20px; background: #fff; color: var(--tinta); box-shadow: 0 30px 80px rgb(5 8 15 / .4); }
+.ligamos::backdrop { background: rgb(5 8 15 / .7); }
+.ligamos-form, .ligamos-ok { position: relative; display: grid; gap: 12px; padding: 26px 22px 22px; }
+.ligamos h2 { margin: 0; font-family: var(--fonte-titulo); font-size: 1.5rem; }
+.ligamos-sub { margin: -4px 0 4px; color: var(--suave); font-size: .92rem; }
+.ligamos label { display: grid; gap: 5px; font-size: .84rem; font-weight: 600; color: var(--tinta); }
+.ligamos input, .ligamos select, .ligamos textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--linha); border-radius: 10px; background: #fff; color: var(--tinta); font: inherit; font-weight: 400; font-size: .95rem; }
+.ligamos input:focus, .ligamos select:focus, .ligamos textarea:focus { outline: none; border-color: var(--azul); box-shadow: 0 0 0 4px rgb(3 90 254 / .14); }
+.ligamos-dupla { display: grid; gap: 12px; }
+@media (min-width: 480px) { .ligamos-dupla { grid-template-columns: 1fr 1fr; } }
+.ligamos-armadilha { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.ligamos-lgpd { margin: 0; color: var(--suave); font-size: .78rem; }
+.ligamos-lgpd a { color: var(--azul); text-decoration: underline; }
+.ligamos-erro { margin: 0; padding: 8px 12px; border-radius: 10px; background: #fff1f2; color: #be123c; font-size: .86rem; }
+.ligamos-enviar { justify-content: center; }
+.ligamos-enviar:disabled { opacity: .65; }
+.ligamos-fechar { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 10px; background: var(--fundo); color: var(--suave); cursor: pointer; }
+.ligamos-fechar:hover { color: var(--tinta); }
+.ligamos-ok { justify-items: center; text-align: center; padding-block: 34px 26px; }
+.ligamos-ok > i { font-size: 2.6rem; color: var(--verde); }
+.ligamos-ok p { margin: 0 0 6px; color: var(--suave); }
+
+/* ── Acesso discreto ao Painel de Sistemas ────── */
+.rodape-base { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.rodape-base p { margin: 0; }
+.rodape-restrito { display: grid; place-items: center; width: 28px; height: 28px; flex-shrink: 0; border-radius: 6px; background: #0a1730; color: rgb(255 255 255 / .18); font-size: .72rem; transition: color .2s, background .2s; }
+.rodape-restrito:hover, .rodape-restrito:focus-visible { background: #0f2a5c; color: rgb(255 255 255 / .8); text-decoration: none !important; }
+
+.ligamos [hidden] { display: none !important; }
+/* não fica embaixo do botão flutuante do WhatsApp */
+.rodape-restrito { margin-right: 72px; }
