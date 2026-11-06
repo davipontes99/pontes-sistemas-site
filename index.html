@@ -47,6 +47,9 @@
       <a href="#planos">Planos</a>
       <a href="#sobre">Sobre</a>
     </nav>
+    <button type="button" class="btn btn-claro topo-cta topo-ligamos" data-abre-ligamos>
+      <i class="fa-solid fa-phone"></i> Nós ligamos pra você
+    </button>
     <a href="https://wa.me/5514997267008?text=Ol%C3%A1!%20Quero%20conhecer%20os%20sistemas%20da%20Pontes%20Softwares." target="_blank" rel="noopener" class="btn btn-azul topo-cta">
       <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
     </a>
@@ -58,6 +61,7 @@
     <a href="#como-funciona">Como funciona</a>
     <a href="#planos">Planos</a>
     <a href="#sobre">Sobre</a>
+    <button type="button" class="menu-ligamos" data-abre-ligamos><i class="fa-solid fa-phone"></i> Nós ligamos pra você</button>
   </nav>
 </header>
 
@@ -344,6 +348,7 @@
     <h2>Seu negócio também pode parar de rodar no improviso.</h2>
     <p>Conte o que trava a sua rotina e a gente mostra o sistema certo, pronto ou sob medida.</p>
     <a href="https://wa.me/5514997267008?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20sistema." target="_blank" rel="noopener" class="btn btn-azul btn-grande"><i class="fa-brands fa-whatsapp"></i> Falar agora no WhatsApp</a>
+    <button type="button" class="btn btn-claro btn-grande" data-abre-ligamos><i class="fa-solid fa-phone"></i> Prefiro que me liguem</button>
   </div>
 </section>
 
@@ -386,12 +391,61 @@
       </ul>
     </div>
   </div>
-  <p class="box rodape-base">&copy; <span id="ano"></span> Pontes Softwares · CNPJ 68.716.451/0001-63 · Bauru-SP</p>
+  <div class="box rodape-base">
+    <p>&copy; <span id="ano"></span> Pontes Softwares · CNPJ 68.716.451/0001-63 · Bauru-SP</p>
+    <!-- Acesso discreto ao Painel de Sistemas (uso interno) -->
+    <a class="rodape-restrito" href="https://cmv-saas.vercel.app/pontes" rel="nofollow noopener" aria-label="Área restrita" title="Área restrita"><i class="fa-solid fa-lock"></i></a>
+  </div>
 </footer>
 
 <a href="https://wa.me/5514997267008?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20sistema." target="_blank" rel="noopener" class="whats-flutua" aria-label="Falar no WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
+
+<dialog class="ligamos" aria-labelledby="ligamos-titulo">
+  <form class="ligamos-form" novalidate>
+    <button type="button" class="ligamos-fechar" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+    <h2 id="ligamos-titulo">Nós ligamos pra você</h2>
+    <p class="ligamos-sub">Deixe seu contato que a gente te chama no WhatsApp ou liga, no horário que for melhor.</p>
+    <label>Seu nome *<input name="nome" autocomplete="name" required maxlength="120"></label>
+    <label>WhatsApp ou telefone (com DDD) *<input name="telefone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="30" placeholder="(14) 99999-9999"></label>
+    <label>Empresa<input name="empresa" autocomplete="organization" maxlength="150"></label>
+    <div class="ligamos-dupla">
+      <label>Tenho interesse em
+        <select name="interesse">
+          <option>Ainda não sei</option>
+          <option>OrçaFácil</option>
+          <option>CMV Dashboard</option>
+          <option>PostaAí</option>
+          <option>Pontix ERP</option>
+          <option>Site</option>
+          <option>Sistema sob medida</option>
+        </select>
+      </label>
+      <label>Melhor horário
+        <select name="horario">
+          <option>Qualquer horário</option>
+          <option>Manhã</option>
+          <option>Tarde</option>
+          <option>Noite</option>
+        </select>
+      </label>
+    </div>
+    <label>Quer contar algo? (opcional)<textarea name="mensagem" rows="3" maxlength="2000"></textarea></label>
+    <!-- campo-armadilha: gente não vê, robô preenche -->
+    <input class="ligamos-armadilha" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="ligamos-lgpd">Seus dados são usados só pra entrar em contato com você. Veja a <a href="privacidade.html" target="_blank">Política de Privacidade</a>.</p>
+    <p class="ligamos-erro" role="alert" hidden></p>
+    <button type="submit" class="btn btn-azul ligamos-enviar"><i class="fa-solid fa-phone"></i> Quero que me liguem</button>
+  </form>
+  <div class="ligamos-ok" hidden>
+    <i class="fa-solid fa-circle-check"></i>
+    <h2>Recebemos!</h2>
+    <p>Em breve a gente entra em contato. Se preferir, chame agora no WhatsApp.</p>
+    <a class="btn btn-azul" href="https://wa.me/5514997267008" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp</a>
+    <button type="button" class="btn btn-linha ligamos-fechar-ok">Fechar</button>
+  </div>
+</dialog>
 
 <dialog class="amplia" aria-label="Tela ampliada">
   <button type="button" class="amplia-fechar" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
